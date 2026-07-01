@@ -56,16 +56,40 @@ export function Hero() {
       ref={rootRef}
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Ken Burns background */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Background video */}
+      <div className="absolute inset-0 -z-10 overflow-hidden bg-[#1a1613]">
+        {/* Poster image — always rendered as base layer, covered by video once ready */}
+        <img
+          src={heroPoster.url}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {useVideo && (
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
+            style={{ opacity: videoReady ? 1 : 0 }}
+            src={heroVideo.url}
+            poster={heroPoster.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            onCanPlay={() => setVideoReady(true)}
+            onError={() => setUseVideo(false)}
+          />
+        )}
+        {/* Dark gradient overlay for text readability */}
         <div
-          className="absolute inset-[-8%] will-change-transform"
+          className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 30% 40%, color-mix(in oklab, var(--gold) 55%, transparent) 0%, transparent 55%), radial-gradient(ellipse at 75% 70%, color-mix(in oklab, var(--olive) 60%, transparent) 0%, transparent 60%), linear-gradient(135deg, #2a2620 0%, #1a1613 100%)",
-            animation: "hero-kenburns 36s ease-in-out infinite alternate",
+              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.55) 100%)",
           }}
         />
+
         {/* soft fog fading into page bg */}
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3"
