@@ -35,7 +35,7 @@ export function Navigation() {
           : "1px solid transparent",
       }}
     >
-      <div className="mx-auto flex h-20 max-h-20 max-w-[1400px] items-center justify-between px-6 py-0 md:h-22 md:max-h-22 md:px-12">
+      <div className="mx-auto flex h-20 max-h-20 max-w-[1400px] items-center justify-between px-6 py-0 md:px-12">
         <a href="#home" className="inline-flex items-center">
           <img
             src={solid ? logoInk : logoGold}
