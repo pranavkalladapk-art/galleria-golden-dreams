@@ -64,7 +64,7 @@ export function Navigation() {
 
         <Magnetic
           href="#contact"
-          className="group relative inline-flex items-center overflow-hidden rounded-full border px-5 py-2.5 text-[10px] uppercase tracking-[0.3em]"
+          className="group relative inline-flex items-center overflow-hidden rounded-full border border-[color-mix(in_oklab,var(--gold)_60%,transparent)] px-5 py-2.5 text-[10px] uppercase tracking-[0.3em]"
         >
           <span
             className="pointer-events-none absolute inset-0 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
