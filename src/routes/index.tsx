@@ -1,24 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Loader } from "@/components/Loader";
+import { CursorGlow } from "@/components/CursorGlow";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Loader />
+      <CursorGlow />
+
+      <main className="relative min-h-screen">
+        <header className="flex items-center justify-between px-8 py-6 md:px-16">
+          <span className="font-serif text-xl tracking-[0.25em]">GW</span>
+          <nav className="hidden gap-10 text-xs uppercase tracking-[0.3em] text-muted-foreground md:flex">
+            <a href="#work">Work</a>
+            <a href="#studio">Studio</a>
+            <a href="#journal">Journal</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
+
+        <section className="flex min-h-[85vh] flex-col items-center justify-center px-6 text-center">
+          <p className="mb-6 text-[11px] uppercase tracking-[0.45em] text-muted-foreground">
+            Kerala · Est. 2014
+          </p>
+          <h1 className="max-w-4xl text-5xl leading-[1.05] md:text-7xl">
+            Weddings, remembered as{" "}
+            <span
+              className="italic"
+              style={{ fontFamily: "var(--font-script)", color: "var(--gold)" }}
+            >
+              poetry
+            </span>
+            .
+          </h1>
+          <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            Galleria Weddings is a quiet studio in Kochi crafting timeless films
+            and photographs for couples who love slowly and celebrate softly.
+          </p>
+        </section>
+      </main>
+    </>
   );
 }
