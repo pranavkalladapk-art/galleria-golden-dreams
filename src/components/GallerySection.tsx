@@ -74,7 +74,15 @@ export function GallerySection() {
     };
     const frames: Frame[] = [];
 
-    const count = FRAME_COLORS.length;
+    const loader = new THREE.TextureLoader();
+    const textures = FRAME_IMAGES.map((src) => {
+      const tex = loader.load(src);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      return tex;
+    });
+
+    const count = FRAME_IMAGES.length;
     for (let i = 0; i < count; i++) {
       const angle = (i / count) * Math.PI * 2;
       const radius = 3.6 + (i % 3) * 0.5;
@@ -86,7 +94,7 @@ export function GallerySection() {
 
       const geo = new THREE.PlaneGeometry(w, h);
       const mat = new THREE.MeshStandardMaterial({
-        color: new THREE.Color(FRAME_COLORS[i]),
+        map: textures[i],
         roughness: 0.85,
         metalness: 0.05,
         side: THREE.DoubleSide,
