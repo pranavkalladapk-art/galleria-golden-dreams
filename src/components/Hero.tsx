@@ -56,20 +56,31 @@ export function Hero() {
       ref={rootRef}
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Background video */}
-      <div className="absolute inset-0 -z-10 overflow-hidden bg-[#1a1613]">
+      {/* Background layer — always present, even if video/poster fail */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Fallback gradient — ensures text never sits on a transparent background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            zIndex: 0,
+            background: "linear-gradient(to bottom, #1a1410, #2C1C18)",
+          }}
+        />
+
         {/* Poster image — always rendered as base layer, covered by video once ready */}
         <img
           src={heroPoster.url}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
+          style={{ zIndex: 1 }}
         />
+
         {useVideo && (
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
-            style={{ opacity: videoReady ? 1 : 0 }}
+            style={{ opacity: videoReady ? 1 : 0, zIndex: 2 }}
             src={heroVideo.url}
             poster={heroPoster.url}
             autoPlay
@@ -81,27 +92,32 @@ export function Hero() {
             onError={() => setUseVideo(false)}
           />
         )}
-        {/* Dark gradient overlay for text readability */}
+
+        {/* Dark gradient overlay for text readability — sits above video/poster */}
         <div
           className="absolute inset-0"
           style={{
+            zIndex: 3,
             background:
               "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.55) 100%)",
           }}
         />
 
-        {/* soft fog fading into page bg */}
+        {/* Soft fog fading into page bg */}
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3"
           style={{
+            zIndex: 4,
             background:
               "linear-gradient(to bottom, transparent 0%, color-mix(in oklab, var(--background) 55%, transparent) 55%, var(--background) 100%)",
           }}
         />
-        {/* top vignette for nav legibility */}
+
+        {/* Top vignette for nav legibility */}
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-40"
           style={{
+            zIndex: 4,
             background:
               "linear-gradient(to bottom, color-mix(in oklab, var(--matte-black) 40%, transparent), transparent)",
           }}
