@@ -5,6 +5,33 @@ import heroPoster from "@/assets/hero-poster.jpg.asset.json";
 
 export function Hero() {
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [videoReady, setVideoReady] = useState(false);
+  const [useVideo, setUseVideo] = useState(true);
+
+  useEffect(() => {
+    // Detect low-end / data-saver / reduced-motion and fall back to poster only.
+    const nav = navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+      deviceMemory?: number;
+      hardwareConcurrency?: number;
+    };
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const saveData = nav.connection?.saveData === true;
+    const slowNet = nav.connection?.effectiveType && /2g|slow-2g|3g/.test(nav.connection.effectiveType);
+    const lowMem = typeof nav.deviceMemory === "number" && nav.deviceMemory <= 2;
+    const lowCPU = typeof nav.hardwareConcurrency === "number" && nav.hardwareConcurrency <= 2;
+    if (reduced || saveData || slowNet || lowMem || lowCPU) {
+      setUseVideo(false);
+      return;
+    }
+    const v = videoRef.current;
+    if (!v) return;
+    const play = v.play();
+    if (play && typeof play.catch === "function") {
+      play.catch(() => setUseVideo(false));
+    }
+  }, []);
 
   useEffect(() => {
     const root = rootRef.current;
