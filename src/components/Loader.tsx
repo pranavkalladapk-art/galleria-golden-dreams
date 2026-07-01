@@ -61,7 +61,7 @@ export function Loader() {
       </div>
 
       <p
-        className="text-[13px] uppercase tracking-[0.5em]"
+        className="text-[14px] uppercase tracking-[0.5em]"
         style={{ color: "color-mix(in oklab, var(--gold) 80%, transparent)" }}
       >
         Galleria Weddings
