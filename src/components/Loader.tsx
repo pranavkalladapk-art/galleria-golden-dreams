@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Music } from "lucide-react";
-import logoGold from "@/assets/logo-gold.png.asset.json";
+import logoGold from "@/assets/logo-gold.png";
 
 export function Loader() {
   const [gone, setGone] = useState(false);
@@ -54,7 +54,7 @@ export function Loader() {
 
       <div className="gw-ring">
         <img
-          src={logoGold.url}
+          src={logoGold}
           alt="Galleria Weddings"
           className="h-auto w-[136%] max-w-none object-contain"
         />

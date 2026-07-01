@@ -5,7 +5,7 @@ import story1 from "@/assets/story-1.jpg";
 import story2 from "@/assets/story-2.jpg";
 import story3 from "@/assets/story-3.jpg";
 import founder from "@/assets/about-founder.jpg";
-import logoGold from "@/assets/logo-gold.png.asset.json";
+import logoGold from "@/assets/logo-gold.png";
 
 /* ---------------- Section header ---------------- */
 function SectionHead({
@@ -692,7 +692,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1400px] gap-12 px-6 md:grid-cols-4 md:px-12">
         <div className="md:col-span-2">
           <img
-            src={logoGold.url}
+            src={logoGold}
             alt="Galleria Weddings"
             className="h-24 w-auto max-w-none object-contain md:h-28"
           />
