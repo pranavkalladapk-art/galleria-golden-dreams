@@ -694,7 +694,7 @@ export function Footer() {
           <img
             src={logoGold}
             alt="Galleria Weddings"
-            className="h-72 w-auto max-w-none object-contain md:h-84"
+            className="h-72 w-auto max-w-none object-contain md:h-80"
           />
           <p
             className="mt-6 max-w-sm text-sm leading-relaxed"
