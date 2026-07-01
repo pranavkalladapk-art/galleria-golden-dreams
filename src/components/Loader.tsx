@@ -60,12 +60,7 @@ export function Loader() {
         />
       </div>
 
-      <p
-        className="text-[14px] uppercase tracking-[0.5em]"
-        style={{ color: "color-mix(in oklab, var(--gold) 80%, transparent)" }}
-      >
-        Galleria Weddings
-      </p>
+      {/* logo is the full wordmark — no duplicate label below */}
 
       <button
         type="button"
