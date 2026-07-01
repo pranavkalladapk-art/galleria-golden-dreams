@@ -40,7 +40,7 @@ export function Navigation() {
           <img
             src={solid ? logoInk.url : logoGold.url}
             alt="Galleria Weddings"
-            className="h-6 w-auto object-contain md:h-7"
+            className="h-12 w-auto max-w-none object-contain md:h-14"
           />
         </a>
 
