@@ -64,17 +64,15 @@ export function Navigation() {
 
         <Magnetic
           href="#contact"
-          className="inline-flex items-center rounded-full border px-5 py-2.5 text-[10px] uppercase tracking-[0.3em] transition-colors duration-300 hover:text-[var(--matte-black)]"
+          className="group relative inline-flex items-center overflow-hidden rounded-full border px-5 py-2.5 text-[10px] uppercase tracking-[0.3em]"
         >
           <span
-            className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity duration-300"
+            className="pointer-events-none absolute inset-0 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
             style={{ background: "var(--gold)" }}
           />
           <span
-            className="relative"
-            style={{
-              color: solid ? "var(--foreground)" : "#F7F3EE",
-            }}
+            className="relative transition-colors duration-300 group-hover:text-[var(--matte-black)]"
+            style={{ color: solid ? "var(--foreground)" : "#F7F3EE" }}
           >
             Book Consultation
           </span>
