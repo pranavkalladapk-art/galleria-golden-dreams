@@ -1,20 +1,19 @@
-import { forwardRef, useEffect, useRef, type ButtonHTMLAttributes, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+type Props = {
   children: ReactNode;
+  className?: string;
   strength?: number;
-  as?: "button" | "a";
   href?: string;
+  onClick?: () => void;
+  ariaLabel?: string;
 };
 
-export const Magnetic = forwardRef<HTMLButtonElement, Props>(function Magnetic(
-  { children, strength = 0.35, className, as = "button", href, ...rest },
-  _ref,
-) {
-  const innerRef = useRef<HTMLElement | null>(null);
+export function Magnetic({ children, className, strength = 0.35, href, onClick, ariaLabel }: Props) {
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const el = innerRef.current;
+    const el = ref.current;
     if (!el) return;
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
     if (!mq.matches) return;
@@ -45,33 +44,36 @@ export const Magnetic = forwardRef<HTMLButtonElement, Props>(function Magnetic(
     };
   }, [strength]);
 
-  const style = { transition: "transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1)" };
+  const style = { transition: "transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1)" };
 
-  if (as === "a") {
-    return (
-      <span className="inline-block" style={{ padding: "8px" }}>
+  return (
+    <span className="inline-block p-2">
+      {href ? (
         <a
-          ref={(n) => (innerRef.current = n)}
+          ref={(n) => {
+            ref.current = n;
+          }}
           href={href}
           className={className}
           style={style}
+          aria-label={ariaLabel}
         >
           {children}
         </a>
-      </span>
-    );
-  }
-
-  return (
-    <span className="inline-block" style={{ padding: "8px" }}>
-      <button
-        ref={(n) => (innerRef.current = n)}
-        className={className}
-        style={style}
-        {...rest}
-      >
-        {children}
-      </button>
+      ) : (
+        <button
+          ref={(n) => {
+            ref.current = n;
+          }}
+          type="button"
+          className={className}
+          style={style}
+          onClick={onClick}
+          aria-label={ariaLabel}
+        >
+          {children}
+        </button>
+      )}
     </span>
   );
-});
+}
