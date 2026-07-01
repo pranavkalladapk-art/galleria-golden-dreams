@@ -56,12 +56,12 @@ export function Loader() {
         <img
           src={logoGold.url}
           alt="Galleria Weddings"
-          className="h-10 w-auto object-contain"
+          className="h-auto w-[136%] max-w-none object-contain"
         />
       </div>
 
       <p
-        className="text-[11px] uppercase tracking-[0.45em]"
+        className="text-[14px] uppercase tracking-[0.5em]"
         style={{ color: "color-mix(in oklab, var(--gold) 80%, transparent)" }}
       >
         Galleria Weddings
