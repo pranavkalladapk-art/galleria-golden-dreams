@@ -3,6 +3,7 @@ import { Loader } from "@/components/Loader";
 import { CursorGlow } from "@/components/CursorGlow";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { GallerySection } from "@/components/GallerySection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -16,7 +17,7 @@ function Index() {
       <Navigation />
       <main>
         <Hero />
-        {/* spacer so scroll transition on nav is visible */}
+        <GallerySection />
         <section className="min-h-screen" />
       </main>
     </>
