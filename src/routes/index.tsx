@@ -4,6 +4,17 @@ import { CursorGlow } from "@/components/CursorGlow";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { GallerySection } from "@/components/GallerySection";
+import {
+  StoriesSection,
+  ServicesSection,
+  ProcessSection,
+  GalleryMasonry,
+  AboutSection,
+  TestimonialsSection,
+  InstagramSection,
+  ContactSection,
+  Footer,
+} from "@/components/Sections";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -18,8 +29,16 @@ function Index() {
       <main>
         <Hero />
         <GallerySection />
-        <section className="min-h-screen" />
+        <StoriesSection />
+        <ServicesSection />
+        <ProcessSection />
+        <GalleryMasonry />
+        <AboutSection />
+        <TestimonialsSection />
+        <InstagramSection />
+        <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }
