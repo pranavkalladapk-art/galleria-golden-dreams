@@ -1,16 +1,25 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import frame1 from "@/assets/frame-1.jpg";
+import frame2 from "@/assets/frame-2.jpg";
+import frame3 from "@/assets/frame-3.jpg";
+import frame4 from "@/assets/frame-4.jpg";
+import frame5 from "@/assets/frame-5.jpg";
+import frame6 from "@/assets/frame-6.jpg";
+import frame7 from "@/assets/frame-7.jpg";
+import frame8 from "@/assets/frame-8.jpg";
+import frame9 from "@/assets/frame-9.jpg";
 
-const FRAME_COLORS = [
-  "#E8DDD2",
-  "#C5A26A",
-  "#5E6953",
-  "#2C1C18",
-  "#DDBE84",
-  "#E8DDD2",
-  "#5E6953",
-  "#C5A26A",
-  "#2C1C18",
+const FRAME_IMAGES = [
+  frame1,
+  frame2,
+  frame3,
+  frame4,
+  frame5,
+  frame6,
+  frame7,
+  frame8,
+  frame9,
 ];
 
 export function GallerySection() {
