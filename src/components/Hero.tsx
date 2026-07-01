@@ -57,7 +57,7 @@ export function Hero() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
       {/* Background layer — always present, even if video/poster fail */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
         {/* Fallback gradient — ensures text never sits on a transparent background */}
         <div
           className="absolute inset-0"
@@ -125,7 +125,7 @@ export function Hero() {
       </div>
 
       {/* particles */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" style={{ zIndex: 1 }}>
         {particles.map((_, i) => {
           const left = (i / particles.length) * 100 + Math.random() * 5;
           const delay = Math.random() * 12;
