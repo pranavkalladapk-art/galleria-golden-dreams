@@ -56,7 +56,7 @@ export function Loader() {
         <img
           src={logoGold.url}
           alt="Galleria Weddings"
-          className="h-auto w-[136%] object-contain"
+          className="h-auto w-[136%] max-w-none object-contain"
         />
       </div>
 
