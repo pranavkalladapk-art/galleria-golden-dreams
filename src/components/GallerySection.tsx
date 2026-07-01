@@ -190,6 +190,7 @@ export function GallerySection() {
         f.outline.geometry.dispose();
         (f.outline.material as THREE.Material).dispose();
       });
+      textures.forEach((t) => t.dispose());
       renderer.dispose();
     };
   }, []);
