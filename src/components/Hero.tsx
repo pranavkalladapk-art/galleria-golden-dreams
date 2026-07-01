@@ -1,5 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Magnetic } from "./Magnetic";
+import heroVideo from "@/assets/hero-loop.mp4.asset.json";
+import heroPoster from "@/assets/hero-poster.jpg.asset.json";
 
 export function Hero() {
   const rootRef = useRef<HTMLDivElement | null>(null);
