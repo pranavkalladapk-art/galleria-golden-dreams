@@ -56,11 +56,15 @@ export function Loader() {
         <img
           src={logoGold}
           alt="Galleria Weddings"
-          className="h-auto w-[136%] max-w-none object-contain"
+          className="object-contain"
+          style={{
+            width: "auto",
+            height: "auto",
+            maxWidth: "90%",
+            maxHeight: "90%",
+          }}
         />
       </div>
-
-      {/* logo is the full wordmark — no duplicate label below */}
 
       <button
         type="button"
