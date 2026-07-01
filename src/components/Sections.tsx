@@ -5,6 +5,7 @@ import story1 from "@/assets/story-1.jpg";
 import story2 from "@/assets/story-2.jpg";
 import story3 from "@/assets/story-3.jpg";
 import founder from "@/assets/about-founder.jpg";
+import logoGold from "@/assets/logo-gold.png.asset.json";
 
 /* ---------------- Section header ---------------- */
 function SectionHead({
@@ -690,12 +691,11 @@ export function Footer() {
     >
       <div className="mx-auto grid max-w-[1400px] gap-12 px-6 md:grid-cols-4 md:px-12">
         <div className="md:col-span-2">
-          <div className="font-serif text-2xl">
-            Galleria{" "}
-            <span className="italic" style={{ color: "var(--gold)" }}>
-              Weddings
-            </span>
-          </div>
+          <img
+            src={logoGold.url}
+            alt="Galleria Weddings"
+            className="h-12 w-auto object-contain"
+          />
           <p
             className="mt-6 max-w-sm text-sm leading-relaxed"
             style={{ color: "color-mix(in oklab, #F7F3EE 65%, transparent)" }}

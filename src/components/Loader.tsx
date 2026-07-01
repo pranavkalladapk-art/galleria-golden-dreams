@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Music } from "lucide-react";
+import logoGold from "@/assets/logo-gold.png.asset.json";
 
 export function Loader() {
   const [gone, setGone] = useState(false);
@@ -52,12 +53,11 @@ export function Loader() {
       </div>
 
       <div className="gw-ring">
-        <span
-          className="font-serif text-3xl tracking-[0.15em]"
-          style={{ color: "var(--gold-bright)" }}
-        >
-          GW
-        </span>
+        <img
+          src={logoGold.url}
+          alt="Galleria Weddings"
+          className="h-10 w-auto object-contain"
+        />
       </div>
 
       <p
