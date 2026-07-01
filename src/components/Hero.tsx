@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Magnetic } from "./Magnetic";
-import heroVideo from "@/assets/hero-loop.mp4.asset.json";
-import heroPoster from "@/assets/hero-poster.jpg.asset.json";
+import heroVideo from "@/assets/hero-loop.mp4";
+import heroPoster from "@/assets/hero-poster.jpg";
 
 export function Hero() {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -69,7 +69,7 @@ export function Hero() {
 
         {/* Poster image — always rendered as base layer, covered by video once ready */}
         <img
-          src={heroPoster.url}
+          src={heroPoster}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
@@ -81,8 +81,8 @@ export function Hero() {
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
             style={{ opacity: videoReady ? 1 : 0, zIndex: 2 }}
-            src={heroVideo.url}
-            poster={heroPoster.url}
+            src={heroVideo}
+            poster={heroPoster}
             autoPlay
             muted
             loop

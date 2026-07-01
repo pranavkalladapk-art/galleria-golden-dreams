@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Magnetic } from "./Magnetic";
-import logoInk from "@/assets/logo-ink.png.asset.json";
-import logoGold from "@/assets/logo-gold.png.asset.json";
+import logoInk from "@/assets/logo-ink.png";
+import logoGold from "@/assets/logo-gold.png";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -38,7 +38,7 @@ export function Navigation() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-12">
         <a href="#home" className="inline-flex items-center">
           <img
-            src={solid ? logoInk.url : logoGold.url}
+            src={solid ? logoInk : logoGold}
             alt="Galleria Weddings"
             className="h-12 w-auto max-w-none object-contain md:h-14"
           />
