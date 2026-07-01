@@ -54,7 +54,7 @@ export function Hero() {
     <section
       id="home"
       ref={rootRef}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-[88px]"
     >
       {/* Background layer — always present, even if video/poster fail */}
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>

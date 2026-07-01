@@ -686,15 +686,15 @@ export function ContactSection() {
 export function Footer() {
   return (
     <footer
-      className="relative pb-10 pt-24"
+      className="relative pb-10 pt-16"
       style={{ background: "var(--matte-black)", color: "#F7F3EE" }}
     >
-      <div className="mx-auto grid max-w-[1400px] gap-12 px-6 md:grid-cols-4 md:px-12">
+      <div className="mx-auto grid max-w-[1400px] gap-8 px-6 md:grid-cols-4 md:px-12">
         <div className="md:col-span-2">
           <img
             src={logoGold}
             alt="Galleria Weddings"
-            className="h-72 w-auto max-w-none object-contain md:h-80"
+            className="h-16 w-auto max-w-none object-contain md:h-[72px]"
           />
           <p
             className="mt-6 max-w-sm text-sm leading-relaxed"

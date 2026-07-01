@@ -35,12 +35,12 @@ export function Navigation() {
           : "1px solid transparent",
       }}
     >
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-12">
+      <div className="mx-auto flex h-20 max-h-20 max-w-[1400px] items-center justify-between px-6 py-0 md:px-12">
         <a href="#home" className="inline-flex items-center">
           <img
             src={solid ? logoInk : logoGold}
             alt="Galleria Weddings"
-            className="h-36 w-auto max-w-none object-contain md:h-44"
+            className="h-10 w-auto max-w-none object-contain md:h-11"
           />
         </a>
 
