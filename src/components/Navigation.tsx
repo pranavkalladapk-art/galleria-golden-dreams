@@ -36,11 +36,12 @@ export function Navigation() {
       }}
     >
       <div className="mx-auto flex h-20 max-h-20 max-w-[1400px] items-center justify-between px-6 py-0 md:px-12">
-        <a href="#home" className="inline-flex items-center">
+        <a href="#home" className="inline-flex items-center" style={{ height: 44 }}>
           <img
             src={solid ? logoInk : logoGold}
             alt="Galleria Weddings"
-            className="h-10 w-auto max-w-none object-contain md:h-11"
+            className="w-auto max-w-none object-contain"
+            style={{ height: 44, width: 'auto' }}
           />
         </a>
 

@@ -694,7 +694,8 @@ export function Footer() {
           <img
             src={logoGold}
             alt="Galleria Weddings"
-            className="h-16 w-auto max-w-none object-contain md:h-[72px]"
+            className="w-auto max-w-none object-contain"
+            style={{ height: 72, width: 'auto' }}
           />
           <p
             className="mt-6 max-w-sm text-sm leading-relaxed"
